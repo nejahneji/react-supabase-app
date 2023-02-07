@@ -18,7 +18,6 @@ const Home = () => {
         .from('smoothies')
         .select()
         .order(orderBy, { ascending: false })
-      console.log(data,"heeloooo")
       if (error) {
         setFetchError('Could not fetch the smoothies')
         setSmoothies(null)
@@ -42,7 +41,7 @@ const Home = () => {
             <button onClick={() => setOrderBy('created_at')}>Time Created</button>
             <button onClick={() => setOrderBy('title')}>Title</button>
             <button onClick={() => setOrderBy('rating')}>Rating</button>
-          </div>{orderBy}
+          </div>
          <div className='smoothie-grid' >
          {smoothies.map(smoothie => (
             <SmoothieCard onDelete={handleDelete} key={smoothie.id} smoothie={smoothie}/>
